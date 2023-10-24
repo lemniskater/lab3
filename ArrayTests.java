@@ -41,13 +41,34 @@ public class ArrayTests {
 
   @Test
   public void testAverageWithoutLowest() {
-    double[] input1 = {1, 2, 3, 4, 5};
-    ArrayExamples.averageWithoutLowest(input1);
-    System.out.println(Arrays.toString(input1));
-    assertEquals(3, input1);
+    double[] input1 = {};
+    double[] input2 = {};
+    System.out.println(ArrayExamples.averageWithoutLowest(input2));
+    assertEquals(0.0, ArrayExamples.averageWithoutLowest(input1), 0.0001);
 
 
-    // error: expected [5, 4, 3, 2, 1], actual: [0, 0, 0, 0, 0]
   }
+
+  @Test
+  public void testAverageWithoutLowestWorking() {
+    double[] input1 = {1.0, 2.0, 3.0};
+    double[] input2 = {1.0, 2.0, 3.0};
+    System.out.println(ArrayExamples.averageWithoutLowest(input2));
+    assertEquals(2.5, ArrayExamples.averageWithoutLowest(input1), 0.0001);
+
+
+  }
+
+  @Test
+  public void testAverageWithoutLowestTooLow() {
+    double[] input1 = {1.0, 1.0, 2.0, 3.0};
+    double[] input2 = {1.0, 1.0, 2.0, 3.0};
+    System.out.println(ArrayExamples.averageWithoutLowest(input2));
+    assertEquals(2.5, ArrayExamples.averageWithoutLowest(input1), 0.0001);
+
+
+  }
+
+
 
 }
